@@ -1,18 +1,13 @@
 os:
   - linux
 
-language: shell
+language: bash
 
 services:
   - docker
 
 script:
-  - |
-    imgs=(`echo ${IMAGES}`)
-    for i in "${imgs[*]}"; do
-      echo "$i"
-    done
-    echo "done"
+  - ./pull.sh
   # - docker build --build-arg BASE_IMAGE=$BASE_IMAGE --build-arg helm_version=$helm_version -t $IMAGE:$TAG .
 
 # after_success:
