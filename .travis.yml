@@ -1,0 +1,19 @@
+os:
+  - linux
+
+language: shell
+
+services:
+  - docker
+
+script:
+  - |
+    imgs=$($IMAGES)
+    for i in "${!array[@]}"; do
+      echo "$i=>${array[i]}"
+    done
+  # - docker build --build-arg BASE_IMAGE=$BASE_IMAGE --build-arg helm_version=$helm_version -t $IMAGE:$TAG .
+
+# after_success:
+  # - docker login -u="$USERNAME" -p="$PASSWORD"
+  # - docker push $IMAGE:$TAG
