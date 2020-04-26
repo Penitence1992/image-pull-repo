@@ -9,8 +9,8 @@ services:
 script:
   - |
     imgs=$($IMAGES)
-    for i in "${!array[@]}"; do
-      echo "$i=>${array[i]}"
+    for i in "${!imgs[@]}"; do
+      echo "$i=>${imgs[i]}"
     done
     echo "done"
   # - docker build --build-arg BASE_IMAGE=$BASE_IMAGE --build-arg helm_version=$helm_version -t $IMAGE:$TAG .
