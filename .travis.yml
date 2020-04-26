@@ -8,7 +8,7 @@ services:
 
 script:
   - |
-    imgs=($IMAGES)
+    imgs=(`echo ${IMAGES}`)
     for i in "${imgs[*]}"; do
       echo "$i"
     done
