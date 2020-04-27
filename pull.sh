@@ -9,7 +9,7 @@ docker login -u="$USERNAME" -p="$PASSWORD"
 for i in ${!imgs[@]} ; do
     echo "$i=>${imgs[i]}"
     docker pull ${imgs[i]}
-    fullname=$(echo "${imgs[i]}" | sed -e 's|registry.gitlab.com/gitlab-org/build/cng|penitence|g')
+    fullname=$(echo "${imgs[i]}" | sed -e 's|registry.gitlab.com/gitlab-org/build/cng|registry.cn-hangzhou.aliyuncs.com/penitence|g')
     docker tag ${imgs[i]} $fullname
     docker push $fullname
 done
